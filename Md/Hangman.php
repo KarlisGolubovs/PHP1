@@ -47,6 +47,6 @@ while ($wrongGuesses < $lives) {
         break;
     }
 }
-if ($wrongGuesses == $lives*2 - 1) {
+if ($wrongGuesses == $lives) {
     echo "Sorry, you ran out of lives. The word was '$wordChoice'.\n";
 }
