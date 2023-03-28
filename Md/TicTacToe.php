@@ -45,18 +45,36 @@ while (true) {
         $winner = true;
     }
 
-    if ($winner) {
-        echo "Player $currentPlayer wins!\n";
-        break;
-    }
-    if (!in_array('_', array_merge(...$board))) {
-        echo "Game over! It's a tie.\n";
-        break;
-    }
-
     if ($currentPlayer == $player1) {
         $currentPlayer = $player2;
     } else {
         $currentPlayer = $player1;
     }
+
+    if ($winner) {
+        echo "Player $winner wins!\n";
+        echo "   0   1   2\n";
+        for ($i = 0; $i < 3; $i++) {
+            echo $i . '  ';
+            for ($j = 0; $j < 3; $j++) {
+                echo $board[$i][$j] . ' | ';
+            }
+            echo "\n  ---|---|---\n";
+        }
+        break;
+    }
+
+    if (!in_array('_', array_merge(...$board))) {
+        echo "Game over! It's a tie.\n";
+        echo "   0   1   2\n";
+        for ($i = 0; $i < 3; $i++) {
+            echo $i . '  ';
+            for ($j = 0; $j < 3; $j++) {
+                echo $board[$i][$j] . ' | ';
+            }
+            echo "\n  ---|---|---\n";
+        }
+        break;
+    }
 }
+
