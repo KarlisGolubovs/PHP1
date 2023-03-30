@@ -2,7 +2,6 @@
 
 echo "Welcome to Hangman\n";
 
-
 $guesses = [];
 $words = [
     "bohr",
