@@ -114,3 +114,4 @@ if ($credits > 0) {
 } else {
     echo "Sorry, you didn't win anything.\n";
 }
+echo "echo";
