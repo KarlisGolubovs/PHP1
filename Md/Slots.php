@@ -7,11 +7,11 @@ $spinCost = 10;
 $gameBoard = array_fill(0, 3, array_fill(0, 4, "_"));
 
 $symbols = [
-    "A" => 10,
-    "K" => 7,
-    "Q" => 5,
-    "J" => 3,
-    "10" => 1
+    "A" => 30,
+    "K" => 21,
+    "Q" => 15,
+    "J" => 9,
+    "10" => 3
 ];
 
 function displayGameBoard($gameBoard)
