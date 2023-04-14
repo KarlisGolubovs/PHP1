@@ -8,17 +8,14 @@ class Account {
         $this->balance = $balance;
     }
 
-    public function deposit($amount) {
+    public function deposit($amount): void
+    {
         $this->balance += $amount;
     }
 
-    public function withdrawal($amount) {
-        $this->balance -= $amount;
-    }
-
-    public function balance(): int
+    public function withdrawal($amount): void
     {
-        return $this->balance;
+        $this->balance -= $amount;
     }
 
     public function __toString() {
@@ -28,7 +25,7 @@ class Account {
 
 $account = new Account("My account", 100.0);
 $account->deposit(20.0);
-echo $account;
+
 
 $matts_account = new Account("Matt's account", 1000);
 $my_account = new Account("My account", 0);

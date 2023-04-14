@@ -1,22 +1,31 @@
 <?php
 
-require_once 'vendor/autoload.php';
+use GuzzleHttp\Exception\GuzzleException;
 
-$city = readline("Enter a location \n");
+
+
+// Get user input
+$city = readline("Enter a location: ");
 $code = readline("Enter a country code: ");
 
+// Set up Guzzle client
+$client = new GuzzleHttp\Client();
 $key = "07fe97575280aa70030226ea49b0ed6b";
-$url = "https://api.openweathermap.org/data/2.5/weather?q=$city,$code&appid=$key&units=metric";
+$url = "https://api.openweathermap.org/data/2.5/weather?q={$city},{$code}&appid={$key}&units=metric";
 
+try {
+    $response = $client->request('GET', $url);
+} catch (GuzzleException $e) {
+}
 
-// Make the API request
-$response = file_get_contents($url);
-$data = json_decode($response, true);
+// Parse response JSON
+$data = json_decode($response->getBody(), true);
 
+// Extract temperature and weather description
 $temp = $data['main']['temp'];
-$description = $data['weather'][0]['description'];
-$icon = $data['weather'][0]['icon'];
+$weather = $data['weather'][0]['description'];
 
-echo "Current temperature in $city, $code is $temp degrees Celsius.\n";
-echo "The weather is $description.\n";
-echo "Icon: https://openweathermap.org/img/w/$icon.png\n";
+// Output results
+echo "Current temperature in {$city}, {$code} is {$temp} degrees Celsius.\n";
+echo "The weather is {$weather}.\n";
+echo "Icon: https://openweathermap.org/img/w/{$data['weather'][0]['icon']}.png\n";
