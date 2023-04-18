@@ -55,7 +55,7 @@ class VideoStore
     {
         echo "Title\t\t\tRating\t\tChecked Out\n";
         foreach ($this->videos as $video) {
-            printf("%-25s%-16s%s\n", $video->getTitle(), $video->getAverageRating() . '%', $video->isCheckedOut() ? 'Yes' : 'No');
+            printf("%-25s%-16s%s\n", $video->getTitle(), $video->getAverageRating() . '', $video->isCheckedOut() ? 'Yes' : 'No');
             if ($video->getAverageRating() > 0) {
                 $avgRating = $video->getAverageRating();
                 printf("Average rating: %.2f\n", $avgRating);
