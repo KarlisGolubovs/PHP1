@@ -1,0 +1,15 @@
+{
+    "name": "karli/enterprise-reg",
+    "autoload": {
+        "psr-4": {
+            "Karli\\EnterpriseReg\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karlis Golubovs",
+            "email": "karlisgolubovs@gmail.com"
+        }
+    ],
+    "require": {}
+}
