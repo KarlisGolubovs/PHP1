@@ -1,0 +1,17 @@
+{
+    "name": "karli/crypto-api2",
+    "autoload": {
+        "psr-4": {
+            "Karli\\CryptoApi2\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "KarlisGolubovs",
+            "email": "karlisgolubovs@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5"
+    }
+}
