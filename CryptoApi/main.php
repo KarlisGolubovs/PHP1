@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use App\getClientRequest;
-use App\TopCryptocurrencies;
+use App\getClientRequest, App\TopCryptocurrencies;
+
 
 // Instantiate the getClientRequest class with your API key
 $clientRequest = new getClientRequest('c67a4bad-b124-44a3-8e00-42f2b015082e');

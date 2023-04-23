@@ -2,7 +2,7 @@
     "name": "karli/enterprise-reg",
     "autoload": {
         "psr-4": {
-            "Karli\\EnterpriseReg\\": "app/"
+            "App\\": "app/"
         }
     },
     "authors": [
@@ -11,5 +11,7 @@
             "email": "karlisgolubovs@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.5"
+    }
 }

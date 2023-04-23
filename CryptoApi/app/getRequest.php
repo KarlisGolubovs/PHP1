@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace App;
 
@@ -33,16 +31,16 @@ class getClientRequest
             ]);
 
             if ($response->getStatusCode() !== 200) {
-                throw new \Exception("API request failed with status code: " . $response->getStatusCode());
+                throw new Exception("API request failed with status code: " . $response->getStatusCode());
             }
 
             return $response->getBody()->getContents();
 
         } catch (RequestException $e) {
-            throw new \Exception("API request failed: " . $e->getMessage());
+            throw new Exception("API request failed: " . $e->getMessage());
 
         } catch (GuzzleException $e) {
-            throw new \Exception("Guzzle request failed: " . $e->getMessage());
+            throw new Exception("Guzzle request failed: " . $e->getMessage());
         }
     }
 }

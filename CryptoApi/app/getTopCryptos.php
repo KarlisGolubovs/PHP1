@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App;
 
 use Exception;
-use GuzzleHttp\Exception\GuzzleException;
 
 class TopCryptocurrencies
 {
@@ -19,7 +18,7 @@ class TopCryptocurrencies
     /**
      * Fetches the top 10 cryptocurrencies by market cap.
      *
-     * @return array An array of associative arrays containing the data for each cryptocurrency.
+     * @return array An array of arrays containing the data for each cryptocurrency.
      * @throws Exception If an error occurs while sending the HTTP request.
      */
     public function getTop10(): array
